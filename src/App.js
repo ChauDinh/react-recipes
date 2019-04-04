@@ -13,11 +13,16 @@ class App extends Component {
   };
 
   async getRecipes() {
-    const data = await fetch(this.state.url);
-    const jsonData = await data.json();
-    this.setState({
-      recipes: jsonData.recipes
-    })
+    try {
+      const data = await fetch(this.state.url);
+      const jsonData = await data.json();
+      this.setState({
+        recipes: jsonData.recipes
+      })
+    }
+    catch(error) {
+      console.log(error);
+    }
   }
 
   render() {
