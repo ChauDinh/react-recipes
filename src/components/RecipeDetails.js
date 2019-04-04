@@ -10,6 +10,20 @@ export class RecipeDetails extends Component {
       url: `https://www.food2fork.com/api/get?key=a7f36b988578bb2cf1aaf95f8f3db9c1&rId=${this.props.id}`
     }
   }
+
+  async componentDidMount() {
+    try {
+      const data = await fetch(this.state.url);
+      const jsonData = await data.json();
+      this.setState({
+        recipe: jsonData.recipe
+      })
+    }
+    catch(error) {
+      console.log(error);
+    }
+  }
+
   render() {
     const {
       image_url,

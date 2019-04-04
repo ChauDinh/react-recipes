@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     recipes: recipes,
     url: "https://www.food2fork.com/api/search?key=a7f36b988578bb2cf1aaf95f8f3db9c1",
-    details_id: 35382
+    details_id: 35384
   };
 
   // async getRecipes() {
