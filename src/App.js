@@ -40,9 +40,25 @@ class App extends Component {
         )
       case 0:
         return (
-          <RecipeDetails id={this.state.details_id} />
+          <RecipeDetails 
+            id={this.state.details_id} 
+            handleIndex={this.handleIndex} 
+          />
         )
     }
+  }
+
+  handleIndex = index => {
+    this.setState({
+      pageIndex: index
+    })
+  }
+
+  handleDetails = (index, id) => {
+    this.setState({
+      pageIndex: index,
+      details_id: id
+    });
   }
 
   render() {
