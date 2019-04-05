@@ -11,7 +11,7 @@ class App extends Component {
     recipes: recipes,
     url: "https://www.food2fork.com/api/search?key=a7f36b988578bb2cf1aaf95f8f3db9c1",
     details_id: 35375,
-    pageIndex: 0
+    pageIndex: 1
   };
 
   async getRecipes() {
@@ -27,16 +27,16 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.getRecipes();
-  }
+  // componentDidMount() {
+  //   this.getRecipes();
+  // }
 
   displayRecipeDetailOrRecipeList = (index) => {
     switch(index) {
       default: 
       case 1:
         return (
-          <RecipeList recipes={this.state.recipes} />
+          <RecipeList recipes={this.state.recipes} handleDetails={this.handleDetails}/>
         )
       case 0:
         return (
