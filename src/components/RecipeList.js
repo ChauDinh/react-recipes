@@ -5,10 +5,10 @@ import RecipeSearch from "./RecipeSearch";
 
 export class RecipeList extends Component {
   render() {
-    const {recipes, handleDetails} = this.props;
+    const {recipes, handleDetails, value, handleChange, handleSubmit} = this.props;
     return (
       <React.Fragment>
-        <RecipeSearch />
+        <RecipeSearch value={value} handleChange={handleChange} handleSubmit={handleSubmit}/>
         <div className="container my-5 ">
 
           {/* title */}
