@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {recipes} from "./tempList";
 import RecipeList from "./components/RecipeList";
 import RecipeDetails from "./components/RecipeDetails";
+import Header from "./components/Header";
 
 import './App.css';
 
@@ -95,6 +96,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
+        <Header />
         {this.displayRecipeDetailOrRecipeList(this.state.pageIndex)}
       </React.Fragment>
     );
